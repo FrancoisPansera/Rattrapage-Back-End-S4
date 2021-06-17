@@ -11,11 +11,11 @@ if (isset($_GET['Id_Client']) && $_SESSION['admin'] == 1) { // On regarde si un 
     $client_id = $_SESSION['Client'];
 }
 $result = $DB->delete( // On supprime
-    "DELETE FROM commentaire WHERE client_id = $client_id;
-    DELETE FROM connexion WHERE client_id = $client_id;
+    "DELETE FROM aime WHERE client_id = $client_id;
     DELETE FROM note WHERE client_id = $client_id;
-    DELETE FROM aime WHERE client_id = $client_id;
     DELETE FROM adresse WHERE client_id = $client_id;
+    DELETE FROM connexion WHERE client_id = $client_id;
+    DELETE FROM commentaire WHERE client_id = $client_id;
     DELETE FROM commande WHERE client_id = $client_id;
     DELETE FROM client WHERE id = $client_id;"
 );
